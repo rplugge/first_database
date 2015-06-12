@@ -16,6 +16,10 @@ class Book
     CONNECTION.execute("UPDATE books SET name = '#{new_book_name}' WHERE id = #{@book_id};")
   end
   
+  def change_location(new_location)
+    CONNECTION.execute("UPDATE books SET location_id = #{new_location} WHERE id = #{@book_id}")
+  end
+  
   def delete
     CONNECTION.execute("DELETE FROM books WHERE id = #{@book_id};")
   end

@@ -13,8 +13,23 @@ CONNECTION.execute("CREATE TABLE IF NOT EXISTS locations (id INTEGER PRIMARY KEY
 CONNECTION.results_as_hash = true
 
 # ------------------------------------------------------------
+
+puts "Hello! What would you like to work with today?"
+puts "Books? (1)"
+puts "Genres? (2)"
+puts "Locations? (3)"
+  
+answer = gets.chomp
+
+if answer = 1
+  puts "What book would you like to see?"
+  
+  Book.all.each do |book_hash|
+      puts "#{book_hash['id']} - #{book_hash['name']}"
+  end
+end
+    
 #
-# puts "Hello! \n What would you like to do?"
 #
 # puts "\n Add a book? (Yes/No)"
 # answer = gets.chomp.downcase
