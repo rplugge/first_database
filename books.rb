@@ -4,8 +4,8 @@ class Book
     CONNECTION.execute("SELECT * FROM books;")
   end
   
-  def self.add
-    CONNECTION.execute("INSERT INTO students ()")
+  def self.add(name, genre, location, quantity)
+    CONNECTION.execute("INSERT INTO students (name, genre, location, quantity) VALUES ('#{name}', )")
   end
   
   
