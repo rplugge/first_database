@@ -5,7 +5,7 @@ class Location
   end
   
   def self.add(location)
-    CONNECTION.execute("INSERT INTO locations (location) VALUES ('#{location}')")
+    CONNECTION.execute("INSERT INTO locations (location) VALUES ('#{location}');")
   end
   
   

@@ -5,7 +5,7 @@ class Book
   end
   
   def self.add(name, genre, location, quantity)
-    CONNECTION.execute("INSERT INTO students (name, genre, location, quantity) VALUES ('#{name}', )")
+    CONNECTION.execute("INSERT INTO books (name, genre, location, quantity) VALUES ('#{name}', #{genre}, #{location}, #{quantity});")
   end
   
   

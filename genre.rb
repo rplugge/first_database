@@ -5,7 +5,7 @@ class Genre
   end
   
   def self.add(genre)
-    CONNECTION.execute("INSERT INTO genres (genre) VALUES ('#{genre}')")
+    CONNECTION.execute("INSERT INTO genres (genre) VALUES ('#{genre}');")
   end
   
   

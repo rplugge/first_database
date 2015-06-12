@@ -1,5 +1,5 @@
 require "sqlite3"
-require_relative "books.rb"
+require_relative "book.rb"
 require_relative "genre.rb"
 require_relative "location.rb"
 
