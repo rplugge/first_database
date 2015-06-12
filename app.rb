@@ -5,9 +5,23 @@ require_relative "location.rb"
 
 CONNECTION = SQLite3::Database.new("inventory.db")
 
-CONNECTION.execute("CREATE TABLE IF NOT EXISTS books (book_id INTEGER PRIMARY KEY, name TEXT, genre INTEGER, location INTEGER, quantity INTEGER NOT NULL, FOREIGN KEY(location) REFERENCES locations(location_id), FOREIGN KEY(genre) REFERENCES genres(genre_id));")
-CONNECTION.execute("CREATE TABLE IF NOT EXISTS genres (genre_id INTEGER PRIMARY KEY, genre TEXT);")
-CONNECTION.execute("CREATE TABLE IF NOT EXISTS locations (location_id INTEGER PRIMARY KEY, location TEXT);")
+CONNECTION.execute("CREATE TABLE IF NOT EXISTS books (id INTEGER PRIMARY KEY, name TEXT, genre_id INTEGER, location_id INTEGER, quantity INTEGER NOT NULL, FOREIGN KEY(location_id) REFERENCES locations(id), FOREIGN KEY(genre_id) REFERENCES genres(id));")
+CONNECTION.execute("CREATE TABLE IF NOT EXISTS genres (id INTEGER PRIMARY KEY, genre TEXT);")
+CONNECTION.execute("CREATE TABLE IF NOT EXISTS locations (id INTEGER PRIMARY KEY, location TEXT);")
 
 # Get results as an Array of Hashes.
 CONNECTION.results_as_hash = true
+
+# ------------------------------------------------------------
+#
+# puts "Hello! \n What would you like to do?"
+#
+# puts "\n Add a book? (Yes/No)"
+# answer = gets.chomp.downcase
+#
+# if answer != "no"
+#   puts "What's the name of the book?"
+#   book_name = gets.chomp
+#
+#   puts "What genre is the book?"
+# end
